@@ -5,15 +5,22 @@ using namespace std;
 int main(){
     string s; cin >> s;
     long long k; cin >> k;
+    bool all_one = true;
+    int val;
 
-    if (s[0] == '1'){
-        if (k == 1){
-            cout << 1 << endl;
-        } else {
-            cout << s[1] << endl;
+    for (int i=0;i<k;i++){
+        auto c = s[i];
+        if (c != '1'){
+            all_one = false;
+            val = c - '0';
+            break;
         }
-    } else {
-        cout << s[0] << endl;
     }
+    if (all_one){
+        cout << 1 << endl;
+    } else {
+        cout << val << endl;
+    }
+
     return 0;
 }
